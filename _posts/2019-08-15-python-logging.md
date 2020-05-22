@@ -118,5 +118,3 @@ if os.environ.get('WERKZEUG_RUN_MAIN') == 'true':
     init_logger(config)
 ```
 接下来就是见证奇迹的时刻，动起来吧！
-
-###### 如果需要交流，请联系我(ps:github有常用邮箱)

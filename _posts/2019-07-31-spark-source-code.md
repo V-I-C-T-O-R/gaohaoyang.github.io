@@ -16,5 +16,3 @@ author: Victor
 错误，将pom文件中对应的依赖scope改为compile，就是有点多-_-)。
 
 接下来详情请关注[spark-source-code](https://github.com/V-I-C-T-O-R/spark-source-code)
-
-###### 如果需要交流，请联系我(ps:github有常用邮箱)

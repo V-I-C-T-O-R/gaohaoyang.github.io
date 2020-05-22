@@ -89,4 +89,3 @@ agent.sinks.kuduSink.producer = com.flume.sink.kudu.JsonKuduOperationProducer
 事实上，属于我们的时代刚刚开始，还等什么呢？  
 
 项目源码详情请看[flume-kudu-sink](https://github.com/V-I-C-T-O-R/flume-kudu-sink)  
-###### 如果需要交流，请联系我(ps:github有常用邮箱)
