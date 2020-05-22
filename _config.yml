@@ -27,9 +27,19 @@ description_footer: 本站记录我人生之旅的沿途风景！
 
 # comments
 # two ways to comment, only choose one, and use your own short name
-# 两种评论插件，选一个就好了，使用自己的 short_name
-duoshuo_shortname: victor
-disqus_shortname: victor
+# 两种评论插件，选一个就好了，使用自己的 short_name 多说不可用，暂时用valine
+duoshuo_shortname: 
+disqus_shortname: 
+valine_shortname: victor
+valine:
+  enable: true
+  appId:  TsxJfHDPmBBYA4TdyzhU2YID-gzGzoHsz
+  appKey: 85WLfeJbyV9AqbMt6jKUS6nV
+  notify: false # mail notifier , https://github.com/xCss/Valine/wiki
+  verify: false # Verification code
+  placeholder: ヾﾉ≧∀≦)o来啊，快活啊! 
+  guest_info: nick,mail,link
+  pageSize: 10
 
 # statistic analysis 统计代码
 # 百度统计 id，将统计代码替换为自己的百度统计id，即
