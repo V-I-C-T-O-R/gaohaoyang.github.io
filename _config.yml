@@ -31,15 +31,14 @@ description_footer: 本站记录我人生之旅的沿途风景！
 duoshuo_shortname: 
 disqus_shortname: 
 valine_shortname: victor
-valine:
-  enable: true
-  appId:  TsxJfHDPmBBYA4TdyzhU2YID-gzGzoHsz
-  appKey: 85WLfeJbyV9AqbMt6jKUS6nV
-  notify: false # mail notifier , https://github.com/xCss/Valine/wiki
-  verify: false # Verification code
-  avatar: monsterid
-  guest_info: nick,mail,link
-  pageSize: 10
+valine_enable: true
+valine_appId:  TsxJfHDPmBBYA4TdyzhU2YID-gzGzoHsz
+valine_appKey: 85WLfeJbyV9AqbMt6jKUS6nV
+valine_notify: false # mail notifier , https://github.com/xCss/Valine/wiki
+valine_verify: false # Verification code
+valine_avatar: monsterid
+valine_guest_info: nick,mail,link
+valine_pageSize: 10
 
 # statistic analysis 统计代码
 # 百度统计 id，将统计代码替换为自己的百度统计id，即

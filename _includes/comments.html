@@ -60,14 +60,14 @@
         });
         new Valine({
             el: '#comments',
-            notify: '<%= site.valine.notify %>' == 'true',
-            verify: '<%= site.valine.verify %>' == 'true',
-            appId: "<%= site.valine.appId %>",
-            appKey: "<%= site.valine.appKey %>",
-            avatar: "<%= theme.valine.avatar %>",
-            placeholder: "<%= site.valine.placeholder %>",
+            notify: '<%= site.valine_notify %>' == 'true',
+            verify: '<%= site.valine_verify %>' == 'true',
+            appId: "<%= site.valine_appId %>",
+            appKey: "<%= site.valine_appKey %>",
+            avatar: "<%= theme.valine_avatar %>",
+            placeholder: "<%= site.valine_placeholder %>",
             guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
-            pageSize: "<%= site.valine.pageSize %>"
+            pageSize: "<%= site.valine_pageSize %>"
         })
         console.log("Valine done!")
          
