@@ -45,7 +45,9 @@
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 {% endif %}
 
-<% if (site.valine_shortname ){ %>
+
+{% if site.valine_shortname %}
+    <div id="valine_thread"></div>
     <!-- Valine Comments -->
     <div class="comments vcomment" id="comments"></div>
     <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
@@ -70,4 +72,4 @@
          
     </script>
     <!-- Valine Comments end -->
-<% } %>
+{% endif %}
