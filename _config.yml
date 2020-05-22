@@ -38,7 +38,6 @@ valine:
   notify: false # mail notifier , https://github.com/xCss/Valine/wiki
   verify: false # Verification code
   avatar: monsterid
-  placeholder: hello world
   guest_info: nick,mail,link
   pageSize: 10
 
