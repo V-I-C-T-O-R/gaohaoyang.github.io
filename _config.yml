@@ -37,7 +37,8 @@ valine:
   appKey: 85WLfeJbyV9AqbMt6jKUS6nV
   notify: false # mail notifier , https://github.com/xCss/Valine/wiki
   verify: false # Verification code
-  placeholder: ヾﾉ≧∀≦)o来啊，快活啊! 
+  avatar: monsterid
+  placeholder: hello world
   guest_info: nick,mail,link
   pageSize: 10
 
