@@ -9,6 +9,11 @@ type: page
 * content
 {:toc}
 
+## 关于我
+* Victor，逐梦者
+* 数据工程师
+* 2016年毕业
+
 ## 联系我
 
 * GitHub：[V-I-C-T-O-R](https://github.com/V-I-C-T-O-R)
