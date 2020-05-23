@@ -175,4 +175,6 @@ public LogData handle(ResultSet rs) throws SQLException {
 最后，编译打包，执行./gradlew build -x test。将编译好的azkaban-common-0.1.0-SNAPSHOT.jar,azkaban-core-0.1.0-SNAPSHOT.jar,azkaban-exec-server-0.1.0-SNAPSHOT.jar放入Executor的lib目录下，将azkaban-common-0.1.0-SNAPSHOT.jar,azkaban-core-0.1.0-SNAPSHOT.jar当入WebServer的lib目录下。测试结果如下：  
 ![](https://github.com/V-I-C-T-O-R/V-I-C-T-O-R.github.io/blob/master/pic/zh_cn_1.png)  
 ![](https://github.com/V-I-C-T-O-R/V-I-C-T-O-R.github.io/blob/master/pic/zh_cn_2.png)  
+![](https://V-I-C-T-O-R.github.io/pic/zh_cn_1.png)  
+![](https://V-I-C-T-O-R.github.io/pic/zh_cn_2.png)
 ![](https://gw.alicdn.com/tfs/TB1yLBduDqWBKNjSZFAXXanSpXa-800-600.gif)
