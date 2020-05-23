@@ -12,7 +12,7 @@ type: page
 ## 联系我
 
 * GitHub：[V-I-C-T-O-R](https://github.com/V-I-C-T-O-R)
-* email：victor_destiny@163.com
+* Email：victor_destiny@163.com
 
 ## 友情链接
 
