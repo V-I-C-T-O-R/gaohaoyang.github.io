@@ -46,11 +46,16 @@
 {% endif %}
 
 {% if site.valine_shortname %}
-<% if (theme.valine_appId && theme.valine_appKey){ %>
-    <%- partial('post/valine', {
-        key: post.slug,
-        title: post.title,
-        url: config.url+url_for(post.path)
-      }) %>
-    <% } %>
+<div id="comments"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#comments',
+        app_id: '{{site.valine_shortname.appId}}',
+        app_key: '{{site.valine_shortname.appKey}}',
+        placeholder:'{{site.valine_shortname.placeholder}}',
+        visitor: true
+    });
+</script>
 {% endif %}
