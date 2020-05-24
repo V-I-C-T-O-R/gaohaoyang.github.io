@@ -26,8 +26,8 @@ dribbble_username:
 description_footer: 本站记录我人生之旅的沿途风景！
 
 # comments
-# two ways to comment, only choose one, and use your own short name
-# 两种评论插件，选一个就好了，使用自己的 short_name 多说不可用，可以用Valine/gitalk这两款评论插件
+# short_name 多说不可用，可以用Valine/gitalk这两款评论插件
+# 配置教程https://www.codepeople.cn/2019/01/03/Jkeyll-Valine/
 duoshuo_shortname: 
 disqus_shortname: 
 valine_shortname: 
@@ -38,6 +38,7 @@ valine_shortname:
     verify: false # Verification code
     avatar: monsterid
     guest_info: nick,mail,link
+    placeholder: "吾以为inkbottle必有高论，岂期出此鄙言！吾有一言，诸军静听"
 
 # statistic analysis 统计代码
 # 百度统计 id，将统计代码替换为自己的百度统计id，即
