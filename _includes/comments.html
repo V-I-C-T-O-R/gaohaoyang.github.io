@@ -44,3 +44,13 @@
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 {% endif %}
+
+{% if site.valine_shortname %}
+<% if (theme.valine_appId && theme.valine_appKey){ %>
+    <%- partial('post/valine', {
+        key: post.slug,
+        title: post.title,
+        url: config.url+url_for(post.path)
+      }) %>
+    <% } %>
+{% endif %}

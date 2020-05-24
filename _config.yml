@@ -27,7 +27,7 @@ description_footer: 本站记录我人生之旅的沿途风景！
 
 # comments
 # two ways to comment, only choose one, and use your own short name
-# 两种评论插件，选一个就好了，使用自己的 short_name 多说不可用，暂时用valine
+# 两种评论插件，选一个就好了，使用自己的 short_name 多说不可用，可以用Valine/gitalk这两款评论插件
 duoshuo_shortname: 
 disqus_shortname: 
 valine_shortname: 
