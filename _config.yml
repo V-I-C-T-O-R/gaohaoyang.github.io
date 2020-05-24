@@ -38,7 +38,7 @@ valine_shortname:
     verify: false # Verification code
     avatar: monsterid
     guest_info: nick,mail,link
-    placeholder: "吾以为inkbottle必有高论，岂期出此鄙言！吾有一言，诸军静听"
+    placeholder: "孤以为卿必有高论！"
 
 # statistic analysis 统计代码
 # 百度统计 id，将统计代码替换为自己的百度统计id，即
