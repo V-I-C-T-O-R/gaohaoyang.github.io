@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Springboot执行方式不同解析Properties差异"
+title:  "Springboot解析Properties差异"
 categories: Springboot
 tags: Springboot 解析 Properties
 author: Victor
