@@ -12,6 +12,7 @@ author: Victor
 #### 前传
   初始认识Datax是刚进入公司的第二个月，当时数据中心架构表现极其不稳定，原本从线上数据库定时同步数据到Hdfs做中转清洗，最后再插入到部门mysql，但是由于服务器资源占用和程式本身的不稳定性，凌晨执行的任务失败后得早上上班才能执行，并且执行过程超过四个小时，严重阻碍了正常工作。鉴于此，经过调研和对整套体系的熟悉，发现使用Datax直接可以用来替代现有的中转流程，并且实践证明比原来的效率提高了50%，整个ETL流程只需要一个多小时。现在整套服务基本稳定运行，本着更加懂它用它的原则，开始看Datax的源代码。
 
+<!-- more -->
 #### 开始(以mysql为例)
 从[www.github:https://github.com/alibaba/DataX](github:https://github.com/alibaba/DataX/)下载源码，通过idea阅读。Datx根目录下core包包含了整个执行框架，其中com.alibaba.datax.core.Engine是整个Java任务的入口，core/src/main/bin/datax.py是服务端打包后执行的入口。
 

@@ -21,6 +21,7 @@ int taskNumber = this.configuration.getList(
 this.needChannelNumber = Math.min(this.needChannelNumber, taskNumber);
 PerfTrace.getInstance().setChannelNumber(needChannelNumber);
 ```
+<!-- more -->
 从上面的代码看出，在不配置splitPk的情况下，单表etl不管配置channel值为大于一的任何值，最后的channel数都为1。
 公平的分配 task 到对应的 taskGroup中，返回Configuration集合。将执行模式置为STANDALONE,交给AbstractScheduler，启动所有的任务线程startAllTaskGroup(configurations)。
 ```

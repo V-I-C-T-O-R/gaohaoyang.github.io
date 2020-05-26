@@ -12,7 +12,7 @@ author: Victor
 <p>
 都是为了优化，所以走上了配置化道路，sql代替代码实现逻辑，so，有了这个补丁。来一波Mybatis解析sql的代码来装下过年的气氛，*_*
 </p>
-
+<!-- more -->
 ```
 public String kylinSql(String content, Map<String, Object> param) {
         Configuration configuration = sqlSessionTemplate.getConfiguration();

@@ -25,6 +25,7 @@ springboot中，经常会出现采用jar执行还是丢到tomcat中执行的情�
     }
     initTemplateData(dir);
 ```
+<!-- more -->
 一旦是通过jar包方式执行的，那就会出现找不到对应的classpath目录下的指定文件，那么就需要对springboot特有的jar文件解析成特定的格式
 
 ```

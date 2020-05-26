@@ -28,6 +28,7 @@ stream_handler = logging.StreamHandler(sys.stdout)
 stream_handler.setFormatter(formatter)
 logger.addHandler(stream_handler)
 ```
+<!-- more -->
 然而，这种配置文件并不能有效的生成定义级别的日志文件。在苦恼之余不得不得一步步的调试到第三方库logging中，不久之后，通用的python项目我修改出了大致如下配置(具体config.LOGGER_LEVEL配置按需更改)：  
 ```
 logger = logging.getLogger()

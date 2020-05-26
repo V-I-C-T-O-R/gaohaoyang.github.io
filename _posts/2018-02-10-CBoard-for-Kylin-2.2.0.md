@@ -13,7 +13,8 @@ author: Victor
 <p>
 最近要研究Kylin的操作与使用，看中它的预处理能力和查询卓越的性能。于是便有了找个开源BI系统的来可视化Kylin查询的诉求。使用过superset-kylin，但是由于某些bug还是不得不放弃。在github上找到一款国产的BI工具，使用和配置还比较简便，Java开发也算对口，于是试着搭建试用下。bug总是有的，CBoard默认下载分支为0.4,部署完成后，发现0.4对于Kylin-2.2.0的兼容性很差，数据源添加和查询都没法进行(当然，官方回复我说0.5分支才支持Kylin-2.*版本，然后并没有事先说明-_-)。
 </p>
-于是乎，下载源码开始自己改咯。追踪发现，是有关Kylin API的调用规则和返回结果的格式改了，0.4版本无法解析造成了,而且还得模拟Kylin中c代码类型的转化。于是乎，开改咯
+于是乎，下载源码开始自己改咯。追踪发现，是有关Kylin API的调用规则和返回结果的格式改了，0.4版本无法解析造成了,而且还得模拟Kylin中c代码类型的转化。于是乎，开改咯  
+<!-- more -->
 ```
 private Map<String, String> getColumnsType(Map<String, String> query, String table, String serverIp, String username, String password) {
         RestTemplate restTemplate = new RestTemplate();
