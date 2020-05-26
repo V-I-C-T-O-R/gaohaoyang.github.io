@@ -17,6 +17,11 @@ type: page
 - [yala-主机监控管理功能](https://github.com/xl0shk/yala)
 - [opendevops-云管理平台](https://github.com/opendevops-cn/opendevops)
 
+#### 调度
+- [Azkaban-工作流依赖调度](https://github.com/azkaban/azkaban)
+- [Schedulis-基于Azkaban的二次开发用户管理](https://github.com/WeBankFinTech/Schedulis)
+- [Airflow-工作流调度平台](https://github.com/apache/airflow)
+
 ### 内网穿透
 - [nps-轻量级、高性能、功能强大的内网穿透代理服务器](https://github.com/ehang-io/nps)
 - [frp内网穿透](https://github.com/fatedier/frp)
@@ -32,6 +37,9 @@ type: page
 - [Canal](https://github.com/alibaba/canal)
 - [DataBus](https://github.com/linkedin/databus)
 - [mysql-binlog-connector-java](https://github.com/shyiko/mysql-binlog-connector-java)
+
+#### 量化交易
+- [量化交易列表](https://github.com/V-I-C-T-O-R/ToolList/blob/master/subdir/%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93.md)
 
 ## Comments
 
