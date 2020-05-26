@@ -61,7 +61,7 @@ kramdown:
 category_dir: category/
 tag_dir: tag/
 
-# excerpt
+# excerpt 这特么是摘要,尴尬，加入到所有文章中即可
 excerpt_separator: "\n\n\n\n"
 
 # paginate
