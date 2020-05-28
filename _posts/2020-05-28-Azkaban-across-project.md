@@ -17,7 +17,7 @@ Azkaban是由Linkedin开源的一个批量工作流任务调度器。用于在�
 #### Mysql状态查询
 Mysql状态查询部分比较好理解，从相关数据表中获取当前指定项目流的执行情况，从而可以将依赖项目的完成情况查询出来。实现示例如下:  
 ```
-    def excute(sql):
+def excute(sql):
     # azkaban关于任务依赖所在的mysql
     config = {'host': mysql_host, 'port': mysql_port, 'user': mysql_user, 'password': mysql_pass, 'db': mysql_db,
               'charset': 'utf8mb4', 'cursorclass': pymysql.cursors.DictCursor, }
@@ -34,37 +34,37 @@ Mysql状态查询部分比较好理解，从相关数据表中获取当前指定
 #### 轮询依赖的项目状态  
 这里依靠Mysql状态查询模块对依赖项目的状态进行判断，是否可以执行当前项目工作流。示例代码：  
 ```
-    # 判断任务是否在数据库中存在
-	def judge_online(project_name):
-	    sql = "select * from projects where name='{}'".format(project_name)
-	    excute_result = excute(sql)
-	    return excute_result
+# 判断任务是否在数据库中存在
+def judge_online(project_name):
+    sql = "select * from projects where name='{}'".format(project_name)
+    excute_result = excute(sql)
+    return excute_result
 
 
-	# 获取项目执行完毕的最新时间
-	def get_latest_record(project_name):
-	    sql = """SELECT *
-	             FROM (
-	                SELECT t2.name AS project_name, t1.*
-	                FROM (
-	                    SELECT project_id, flow_id, status
-	                        , substr(FROM_UNIXTIME(start_time / 1000), 1, 19) AS start_time
-	                        , substr(FROM_UNIXTIME(end_time / 1000), 1, 19) AS end_time
-	                        , enc_type
-	                    FROM azkaban.execution_flows
-	                    WHERE status = 50 AND substr(FROM_UNIXTIME(end_time/1000), 1, 19)>=DATE_FORMAT(CURDATE(),'%Y-%m-%d %H:%i:%s')
-	                ) t1
-	                    INNER JOIN (
-	                        SELECT *
-	                        FROM projects
-	                        WHERE name = '{}'
-	                    ) t2
-	                    ON t1.project_id = t2.id
-	                ORDER BY end_time DESC
-	             ) t
-	             LIMIT 1""".format(project_name)
-	    excute_result = excute(sql)
-	    return excute_result
+# 获取项目执行完毕的最新时间
+def get_latest_record(project_name):
+    sql = """SELECT *
+             FROM (
+                SELECT t2.name AS project_name, t1.*
+                FROM (
+                    SELECT project_id, flow_id, status
+                        , substr(FROM_UNIXTIME(start_time / 1000), 1, 19) AS start_time
+                        , substr(FROM_UNIXTIME(end_time / 1000), 1, 19) AS end_time
+                        , enc_type
+                    FROM azkaban.execution_flows
+                    WHERE status = 50 AND substr(FROM_UNIXTIME(end_time/1000), 1, 19)>=DATE_FORMAT(CURDATE(),'%Y-%m-%d %H:%i:%s')
+                ) t1
+                    INNER JOIN (
+                        SELECT *
+                        FROM projects
+                        WHERE name = '{}'
+                    ) t2
+                    ON t1.project_id = t2.id
+                ORDER BY end_time DESC
+             ) t
+             LIMIT 1""".format(project_name)
+    excute_result = excute(sql)
+    return excute_result
 ```
 #### 轮询执行的当前项目状态  
 当得到依赖项目执行完成切成功的信息后，开始通过API调用执行当前指定的工作流，并持续监听执行状态，直到执行完成。示例代码为：  
