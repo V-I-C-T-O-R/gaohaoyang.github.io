@@ -30,8 +30,8 @@ Mysql状态查询部分比较好理解，从相关数据表中获取当前指定
     connection.close()
     return result
 
-```  
-#### 轮询依赖的项目状态
+```
+#### 轮询依赖的项目状态  
 这里依靠Mysql状态查询模块对依赖项目的状态进行判断，是否可以执行当前项目工作流。示例代码：  
 ```
     # 判断任务是否在数据库中存在
@@ -66,8 +66,7 @@ Mysql状态查询部分比较好理解，从相关数据表中获取当前指定
 	    excute_result = excute(sql)
 	    return excute_result
 ```
-####  
-轮询执行的当前项目状态
+#### 轮询执行的当前项目状态  
 当得到依赖项目执行完成切成功的信息后，开始通过API调用执行当前指定的工作流，并持续监听执行状态，直到执行完成。示例代码为：  
 ```
 def exec_across_dependencies_task(session_id, depend_project, ready_project, ready_flow):
