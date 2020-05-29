@@ -18,7 +18,7 @@ author: Victor
 * 直接在数据流源中进行。标点水位线(Punctuated Watermark)-数据流中每一个递增的EventTime都会产生一个Watermark，只有在实时性要求非常高的场景才会选择Punctuated的方式进行 Watermark的生成。
 * 通过timestamp assigner和watermark generator生成；定期水位线(Periodic Watermark)-周期性的（一定时间间隔或者达到一定的记录条数）产生一个 Watermark。在实际的生产中 Periodic 的方式必须结合时间和积累条数两个维度继续周期性产生 Watermark，否则在极端情况下会有很大的延时。
 > 注意：如果指定多次watermark，后面指定的会覆盖前面的值；多并行度的情况下，watermark对齐会取所有channel最小的watermark；
-
+<!-- more -->
 Watermark工作原理(拷贝自[tqz](https://zhuanlan.zhihu.com/p/90714804)):  
 ```
 假设设置水印的时候允许最大延迟时间为 10s，则水印值会在 Event Time 上面减 10  
