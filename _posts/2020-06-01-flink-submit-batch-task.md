@@ -10,7 +10,7 @@ author: Victor
 {:toc}
 
 #### 前言  
-了解一个框架，得首先了解它的执行过程。而源码追溯就是一个很好的学习方法，通过一层层的引用查看，可以很好的理解Flink在提交任务过程中做了什么。从经典WordCount程序出发，学习Flink  
+了解一个框架，得首先了解它的执行过程。而源码追溯就是一个很好的学习方法，通过一层层的引用查看，可以很好的理解Flink在提交任务过程中做了什么。从经典WordCount程序出发，学习Flink。  
 
 #### 解析可执行环境  
 最经典的计算示例莫过于WorldCount，Flink中的示例提交方式很简单：bin/flink run examples/batch/WordCount.jar。即来到Flink的根目录，命令行输入以上指令便可进行简单的单词统计功能。打开源代码，可以看到bin/flink是一个shell脚本，用于预加载环境并启动Java程序。  
@@ -46,23 +46,18 @@ exec $JAVA_RUN $JVM_ARGS $FLINK_ENV_JAVA_OPTS "${log_setting[@]}" -classpath "`m
 public static void main(final String[] args) {
     //日志打印出当前执行环境的基本信息
 	EnvironmentInformation.logEnvironmentInfo(LOG, "Command Line Client", args);
-
 	//找到配置目录
 	final String configurationDirectory = getConfigurationDirectoryFromEnv();
-
 	//加载配置目录文件
 	final Configuration configuration = GlobalConfiguration.loadConfiguration(configurationDirectory);
-
 	//加载三种CustomCommandLine实例
 	final List<CustomCommandLine> customCommandLines = loadCustomCommandLines(
 		configuration,
 		configurationDirectory);
-
 	try {
 		final CliFrontend cli = new CliFrontend(
 			configuration,
 			customCommandLines);
-
 		SecurityUtils.install(new SecurityConfiguration(cli.configuration));
 		//根据命令行传递过来的参数做后续动作
 		int retCode = SecurityUtils.getInstalledContext()
@@ -77,7 +72,7 @@ public static void main(final String[] args) {
 	}
 }
 ```
-上面cli.parseParameter解析参数，触发action  
+上面cli.parseParameter解析参数，触发action。  
 ```
 public int parseParameters(String[] args) {
     ...省略...
@@ -141,7 +136,7 @@ public static void executeProgram(
 			userCodeClassLoader,
 			enforceSingleJobExecution,
 			suppressSysout);
-        ...省略...
+		...省略...
 		program.invokeInteractiveModeForExecution();
 		...省略...
 }
@@ -150,10 +145,10 @@ public void invokeInteractiveModeForExecution() throws ProgramInvocationExceptio
 }
 ```
 #### WordCount任务提交  
-终于到了WordCount这个实际业务类，
+终于到了WordCount这个实际业务类，该类实现了简单的单词个数统计功能。
 ```
-public static void main(String[] args) throws Exception {
-    ...省略...
+public static void main(String[] args) throws Exception {  
+	...省略...
 	//初始化flink任务可执行环境
 	final ExecutionEnvironment env = ExecutionEnvironment.getExecutionEnvironment();
 	...省略...
@@ -186,14 +181,13 @@ public static void main(String[] args) throws Exception {
 这里Flink的提交具体是在ExecutionEnvironment.executeAsync方法中。  
 ```
 public JobClient executeAsync(String jobName) throws Exception {
-    //创建执行计划
+	//创建执行计划
 	final Plan plan = createProgramPlan(jobName);
 	//这里的executorServiceLoader实际上是DefaultExecutorServiceLoader INSTANCE = new DefaultExecutorServiceLoader()
 	final PipelineExecutorFactory executorFactory =
 		executorServiceLoader.getExecutorFactory(configuration);
-
-    ...省略...
-    //提交执行计划
+	...省略...
+	//提交执行计划
 	CompletableFuture<JobClient> jobClientFuture = executorFactory
 		.getExecutor(configuration)
 		.execute(plan, configuration);
@@ -260,7 +254,7 @@ public JobClient executeAsync(String jobName) throws Exception {
 	...省略...
 }
 ```
-下面LocalExecutor类的execute方法会依次调用LocalExecutor.getJobGraph->PipelineExecutorUtils.getJobGraph->FlinkPipelineTranslationUtil.getJobGraph->PlanTranslator.translateToJobGraph->PlanTranslator.compilePlan
+下面LocalExecutor类的execute方法会依次调用LocalExecutor.getJobGraph->PipelineExecutorUtils.getJobGraph->FlinkPipelineTranslationUtil.getJobGraph->PlanTranslator.translateToJobGraph->PlanTranslator.compilePlan。
 ```
 //LocalExecutor类
 @Override
@@ -309,4 +303,5 @@ public CompletableFuture<JobClient> submitJob(JobGraph jobGraph) throws Exceptio
 		.thenApply(Function.identity());
 }
 ```  
-Batch World Count的代码追踪就先记录到这里，初次记录还有些许不明了的地方，希望在实践中加以验证！  
+
+WorldCount批示例代码追踪就先记录到这里，初次记录还有些许不明了的地方，希望在实践中加以验证！  
