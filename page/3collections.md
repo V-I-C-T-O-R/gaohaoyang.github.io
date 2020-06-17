@@ -32,11 +32,15 @@ type: page
 - [NiFi](https://github.com/apache/nifi)
 - [Flume](https://github.com/V-I-C-T-O-R/flume-ng-sql-source)
 
-### Mysql实时同步工具
-- [Maxwell](https://github.com/zendesk/maxwell)
-- [Canal](https://github.com/alibaba/canal)
-- [DataBus](https://github.com/linkedin/databus)
-- [mysql-binlog-connector-java](https://github.com/shyiko/mysql-binlog-connector-java)
+### 数据库实时同步工具
+- [debezium-Mysql/Oracle/Sqlserver/MongoDB/PostgreSql等CDC工具](https://github.com/debezium/debezium)
+- [SpinalTap-Mysql CDC工具](https://github.com/airbnb/SpinalTap)
+- [Maxwell-Mysql2Json的CDC工具](https://github.com/zendesk/maxwell)
+- [Canal-Mysql CDC工具](https://github.com/alibaba/canal)
+- [Otter-基于Canal的Mysql CDC工具](https://github.com/alibaba/otter)
+- [DataBus-Oracle/Mysql CDC工具](https://github.com/linkedin/databus)
+- [mysql-binlog-connector-java-自定义Mysql CDC工具](https://github.com/shyiko/mysql-binlog-connector-java)
+- [DBLog-通用的数据变更捕获框架-等待开源](https://netflixtechblog.com/dblog-a-generic-change-data-capture-framework-69351fb9099b)
 
 #### 量化交易
 - [量化交易列表](https://github.com/V-I-C-T-O-R/ToolList/blob/master/subdir/%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93.md)
