@@ -22,7 +22,8 @@ type: page
 - [NiFi](https://github.com/apache/nifi)
 - [Flume](https://github.com/V-I-C-T-O-R/flume-ng-sql-source)
 - [Datax-Web](https://github.com/WeiYe-Jing/datax-web)
-- [waterdrop-支持实时流式和离线批处理的海量数据处理产品](https://github.com/InterestingLab/waterdrop)
+- [Waterdrop-支持实时流式和离线批处理的海量数据处理产品](https://github.com/InterestingLab/waterdrop)
+- [FlinkX-基于Flink的批流统一的数据同步工具](https://github.com/DTStack/flinkx)
 
 ### 数据库实时同步工具  
 - [StreamSets可与CDH集成](https://github.com/streamsets)
