@@ -17,7 +17,7 @@ type: page
 ## 联系我
 
 * GitHub：[V-I-C-T-O-R](https://github.com/V-I-C-T-O-R)
-* Email：victor_destiny@163.com
+* Email：victordestiny1990@gmail.com
 
 ## 友情链接
 
